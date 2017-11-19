@@ -2,29 +2,29 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import TransitionComponent from '../components/TransitionComponent/index';
 import Header from '../components/Header';
-import Test from '../components/Test';
+import SideBar from '../components/SideBar';
+import ActivityPage from './Pages/Activity';
+import { receipts } from '../../data/mock-data.json';
 
-import '../../style/style.scss';
+import './Pages/styles.scss';
+// import '../../assets/spritesheet/sprite.css';
+import '../../sharedAssets/_main.scss';
 
 const App = () =>
   <div className="app">
-    <Switch>
-      <Route
-        exact
-        path="/"
-        component={ props =>
-          <TransitionComponent transitionsName={ 'fade' }>
-            <Header { ...props } />
-          </TransitionComponent> }
-      />
-      <Route
-        path="/"
-        component={ props =>
-          <TransitionComponent transitionsName={ 'fade' }>
-            <Test { ...props } />
-          </TransitionComponent> }
-      />
-    </Switch>
+    <Header />
+    <SideBar />
+    <div className="pages" id="main-wrapper">
+      <Switch>
+        <Route
+          path="/dashboard"
+          component={ props =>
+            <TransitionComponent transitionsName={ 'fade' }>
+              <ActivityPage { ...props } receipts={ receipts } />
+            </TransitionComponent> }
+        />
+      </Switch>
+    </div>
   </div>;
 
 export default App;
