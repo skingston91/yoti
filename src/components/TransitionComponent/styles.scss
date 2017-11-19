@@ -1,0 +1,36 @@
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.moveToBottom {
+  -webkit-animation: moveToBottom .6s ease both;
+  animation: moveToBottom .6s ease both;
+}
+
+.moveFromBottom {
+  -webkit-animation: moveFromBottom .6s ease both;
+  animation: moveFromBottom .6s ease both;
+}
