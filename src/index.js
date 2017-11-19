@@ -5,7 +5,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import reducers from './reducers';
 import App from './containers/App';
-import '../style/style.scss';
 import thunk from 'redux-thunk';
 
 const createStoreWithMiddleware = applyMiddleware(
@@ -18,5 +17,5 @@ ReactDOM.render(
       <App />
     </Router>
   </Provider>,
-  document.querySelector('.container')
+  document.querySelector('.rootContainer')
 );

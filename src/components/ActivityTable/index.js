@@ -2,32 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ActivityOption from '../ActivityOption';
-import moment from 'moment';
 
-const ActivityTable = ({ receipts }) => {
-  const time = moment.unix(receipt.transaction['unix-timestamp']);
-  return (
-    <table className={ classNames('table table-bordered') } >
-      <thead>
-        <tr className="bg-c-16">
-          <span> { time.format('YYYY-MM-DD HH:mm') } </span>
-        </tr>
-      </thead>
-      { receipts
-        .map((receipt, index) => (
-          <ActivityOption
-            key={ index }
-            receipt={ receipt }
-            onClick={ (data) => { this.onClick(data); } }
-          />)
-      ) }
-    </table>
-  );
-};
+const ActivityTable = ({ receiptsGroup, date, onClick }) => (
+  <table className={ classNames('table table-bordered') } >
+    <thead>
+      <tr className="bg-c-16">
+        <span> { date } </span>
+      </tr>
+    </thead>
+    { receiptsGroup
+      .map((receipt, index) => (
+        <ActivityOption
+          key={ index }
+          receipt={ receipt }
+          onClick={ onClick }
+        />)
+    ) }
+  </table>
+);
 
 ActivityTable.propTypes = {
-  receipts: PropTypes.object.isRequired,
-  time: PropTypes.string.isRequired,
+  receiptsGroup: PropTypes.object.isRequired,
+  date: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ActivityTable;

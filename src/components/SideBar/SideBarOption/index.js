@@ -5,7 +5,7 @@ import classnames from 'classnames';
 const SideBarOption = ({ text, className, selected }) =>
   <div className={ classnames('SideBarOption', selected ? 'SideBarOptionSelected' : '') } >
     <div className={ className } />
-    <h1>{ text } </h1>
+    <h3>{ text } </h3>
   </div>;
 
 SideBarOption.propTypes = {
