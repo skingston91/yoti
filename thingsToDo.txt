@@ -1,9 +1,0 @@
-Collapsable lists
-Fix for span in table
-Fix SVG loading
-Styling fixes
-Table header
-Hover effects
-PopupModal
-
-Talk about what I would have added
