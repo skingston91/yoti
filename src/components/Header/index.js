@@ -13,20 +13,23 @@ const Header = ({ profilePictureImage, connectionStatus }) =>
         />
       </Link>
     </div>
-    <div className="nav navbar-nav navbar-right">
+    <div className="navbarRight">
       <ConnectionStatus status={ connectionStatus } />
       <Link to="/profile">
-        <img
-          src={ profilePictureImage }
-          className="icon-user-selfie-ph-small"
-          alt="profile"
-        />
+        { profilePictureImage &&
+          <img
+            src={ profilePictureImage }
+            className="profilePicture"
+            alt="profile"
+          />
+        }
+        { !profilePictureImage && <span className="profilePicture icon-user_selfie_ph" /> }
       </Link>
     </div>
   </nav>;
 
 Header.propTypes = {
-  profilePictureImage: PropTypes.string.isRequired,
-  connectionStatus: PropTypes.bool.isRequired,
+  profilePictureImage: PropTypes.string,
+  connectionStatus: PropTypes.bool,
 };
 export default Header;

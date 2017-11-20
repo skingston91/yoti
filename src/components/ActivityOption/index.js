@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import './styles.scss';
 
 const ActivityOption = ({ receipt }) => {
   const time = moment.unix(receipt.transaction['unix-timestamp']);
-  console.log(receipt);
   return (
     <tbody>
       <tr>
         <td>
-          <span className="icon-receipt-confirmed" />
+          <em className="icon-receipt_confirmed" />
         </td>
         <td>
-          <span className="profilePicture icon-user-selfie-ph-small" />
+          <em className="profilePicture icon-user_selfie_ph" />
         </td>
         <td>
           { receipt.type === 'share'
@@ -35,7 +35,6 @@ const ActivityOption = ({ receipt }) => {
 
 ActivityOption.propTypes = {
   receipt: PropTypes.object.isRequired,
-  time: PropTypes.string.isRequired,
 };
 
 export default ActivityOption;

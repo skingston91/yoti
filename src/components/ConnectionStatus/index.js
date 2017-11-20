@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.scss';
 
 const ConnectionStatus = ({ status }) =>
   <div className="connectionStatus">
@@ -11,7 +12,7 @@ const ConnectionStatus = ({ status }) =>
     { !status &&
       <div>
         <div className="icon-connect-off" />
-        <p>Not Connected</p>
+        <p className="connectionStatusText">Not Connected</p>
       </div> }
   </div>;
 

@@ -16,7 +16,7 @@ class ActivityPage extends React.Component {
   }
   sortGroup(receipts) {
     const groupedReceipts = receipts
-      .sort((a, b) => a.transaction['unix-timestamp'] - b.transaction['unix-timestamp'])
+      .sort((a, b) => b.transaction['unix-timestamp'] - a.transaction['unix-timestamp'])
       .map((receipt => {
         receipt.date = moment.unix(receipt.transaction['unix-timestamp']).format('DD MMMM YYYY');
         return receipt;

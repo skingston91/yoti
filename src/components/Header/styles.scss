@@ -1,4 +1,20 @@
 .headerContainer {
   width: 100%;
   min-height: 10%;
+  .navbar-left {
+    width: 10%;
+    .icon-logo {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+  .navbarRight {
+    float: right;
+    .icon-user_selfie_ph {
+      display: inline-block;
+    }
+    .profilePicture {
+      float:right;
+    }
+  }
 }

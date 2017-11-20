@@ -12,7 +12,7 @@ import '../../sharedAssets/_main.scss';
 
 const App = () =>
   <div className="app">
-    <Header />
+    <Header connectionStatus />
     <SideBar />
     <div className="pages" id="main-wrapper">
       <Switch>

@@ -4,7 +4,7 @@ import SideBarOption from './SideBarOption';
 
 const SideBarOptions = [{
   text: 'Activity',
-  className: 'ActivityIcon',
+  className: 'icon-activity',
 }];
 
 class SideBar extends React.Component {
