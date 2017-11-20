@@ -57,8 +57,11 @@ module.exports = {
         test: /\.scss$/,
       },
       {
-        use: ['url-loader'],
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+        },
       },
     ],
   },

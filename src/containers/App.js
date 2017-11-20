@@ -7,7 +7,7 @@ import ActivityPage from './Pages/Activity';
 import { receipts } from '../../data/mock-data.json';
 
 import './Pages/styles.scss';
-// import '../../assets/spritesheet/sprite.css';
+import '../../assets/spritesheet/sprite.css';
 import '../../sharedAssets/_main.scss';
 
 const App = () =>
