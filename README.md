@@ -17,3 +17,4 @@ Things I would have liked to have added:
 	- Finished the popupModal
 	- Added hover effects
 	- Dug deeper into package.json for unused modules
+	- Added storybook versions of components
