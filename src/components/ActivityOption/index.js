@@ -9,10 +9,7 @@ const ActivityOption = ({ receipt }) => (
     { ({ openPortal, closePortal, portal }) => [
       <ReceiptTableBody key="table row" receipt={ receipt } onClick={ openPortal } />,
       portal(
-        <div>
-          <PopupModal receipt={ receipt } />
-          <p><button onClick={ closePortal }>Close me!</button></p>
-        </div>
+        <PopupModal receipt={ receipt } closePortal={ closePortal } />
       ),
     ] }
   </PortalWithState>
