@@ -1,37 +1,22 @@
 import React from 'react';
+import PopupModal from '../PopupModal';
+import ReceiptTableBody from '../ReceiptTableBody';
 import PropTypes from 'prop-types';
-import moment from 'moment';
-import './styles.scss';
+import { PortalWithState } from 'react-portal';
 
-const ActivityOption = ({ receipt }) => {
-  const time = moment.unix(receipt.transaction['unix-timestamp']);
-  return (
-    <tbody>
-      <tr>
-        <td>
-          <em className="icon-receipt_confirmed" />
-        </td>
-        <td>
-          <em className="profilePicture icon-user_selfie_ph" />
-        </td>
-        <td>
-          { receipt.type === 'share'
-            && receipt.transaction
-            && receipt.transaction.attributes
-            && receipt.transaction.attributes[0]
-            && <p>{ `${ receipt.transaction.attributes[0]['given-names'] } shared` } </p> }
-          { receipt.type === 'application'
-            && receipt.application
-            && receipt.application.name
-            && <p>{ receipt.application.name } </p> }
-        </td>
-        <td>
-          <p className="text-right receipt-item-date"> { time.format('HH:MM DD MMMM YYYY') } </p>
-        </td>
-      </tr>
-    </tbody>
-  );
-};
+const ActivityOption = ({ receipt }) => (
+  <PortalWithState closeOnOutsideClick closeOnEsc>
+    { ({ openPortal, closePortal, portal }) => [
+      <ReceiptTableBody key="table row" receipt={ receipt } onClick={ openPortal } />,
+      portal(
+        <div>
+          <PopupModal receipt={ receipt } />
+          <p><button onClick={ closePortal }>Close me!</button></p>
+        </div>
+      ),
+    ] }
+  </PortalWithState>
+);
 
 ActivityOption.propTypes = {
   receipt: PropTypes.object.isRequired,

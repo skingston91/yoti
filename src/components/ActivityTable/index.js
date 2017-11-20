@@ -14,7 +14,7 @@ class ActivityTable extends React.Component {
   }
 
   render() {
-    const { receiptsGroup, date, openModal } = this.props;
+    const { receiptsGroup, date } = this.props;
     return (
       <table className={ classNames('table table-bordered') } >
         <thead>
@@ -27,7 +27,6 @@ class ActivityTable extends React.Component {
             <ActivityOption
               key={ index }
               receipt={ receipt }
-              onClick={ openModal }
             />)
         ) }
       </table>
@@ -38,7 +37,6 @@ class ActivityTable extends React.Component {
 ActivityTable.propTypes = {
   receiptsGroup: PropTypes.array.isRequired,
   date: PropTypes.string.isRequired,
-  openModal: PropTypes.func.isRequired,
 };
 
 export default ActivityTable;
